@@ -6,7 +6,7 @@ function Home() {
       <div className="row">
         <div className="col s12 m4 center">
           <img
-            src="./assets/ProfilePhoto.jpg"
+            src="./images/ProfilePhoto.jpg"
             alt="Profile Photo"
             className="profile-photo"
           />

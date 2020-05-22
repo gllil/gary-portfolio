@@ -1,59 +1,117 @@
-import React from "react";
+import React, { useState } from "react";
+import "materialize-css";
+import { TextInput, Textarea } from "react-materialize";
+import axios from "axios"
+
+// const nodemailer = require("nodemailer");
 
 function Contact() {
-    return(
-        <div>
-            <div class="container">
-      <div class="row contact-form" >
-        <form class="col s12 " id="contact-form" method="POST" action="send">
-          <div class="row text-black">
-            <div class="input-field col s12">
-              <input placeholder="Ex: John Doe" type="text" name="name" class="validate nameInfo" required/>
-              <label for="name">Name</label>
+  const [formObject, setFormOject] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  
+
+  function handleInputChange(event) {
+    setFormOject({
+      ...formObject,
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  function handleEmailButton(event) {
+    event.preventDefault();
+
+    axios.post("/api/sendMail", formObject)
+  }
+
+  return (
+    <div>
+      <div className="container">
+        <div className="row contact-form">
+          <form className="col s12 " id="contact-form">
+            <div className="row text-black">
+              <TextInput
+                id="name"
+                name="name"
+                label="Full Name"
+                placeholder="Ex: John Doe"
+                s={12}
+                onChange={handleInputChange}
+                required
+              />
             </div>
-          </div>
 
-          <div class="row">
-            <div class="input-field col s12">
-              <input type="email" name="email" class="validate emailInfo" required/>
-              <label for="email">Email Address</label>
+            <div className="row text-black">
+              <TextInput
+                email
+                error="Please Input an Email"
+                name="email"
+                id="email"
+                label="Email"
+                success="Great"
+                placeholder="email@example.com"
+                validate
+                s={12}
+                onChange={handleInputChange}
+                required
+              />
             </div>
-          </div>
 
-
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea class="materialize-textarea messageInfo" name="message" required></textarea>
-              <label for="message">Message</label>
+            <div className="row text-black">
+              <Textarea
+                data-length={500}
+                name="message"
+                id="message"
+                label="Message"
+                s={12}
+                validate
+                onChange={handleInputChange}
+                required
+              />
             </div>
-          </div>
 
-          <button class="btn waves-effect waves-light grey darken-1 right emailBtn" type="submit">Submit
-            <i class="material-icons right">send</i>
-          </button>
-
-
-        </form>
-      </div>
-    </div>
-    <div id="errorMessage" class="modal">
-      <div class="modal-content">
-                <p>Form must be filled before sending</p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat errorCloseBtn">Close</a>
-      </div>
-    </div>
-    <div id="successMessage" class="modal">
-      <div class="modal-content">
-                <p>Message Sent Successfully</p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat closeBtn">Close</a>
-      </div>
-    </div>
+            <button
+              className="btn waves-effect waves-light grey darken-1 right emailBtn"
+              type="submit"
+              onClick={handleEmailButton}
+            >
+              Submit
+              <i className="material-icons right">send</i>
+            </button>
+          </form>
         </div>
-    )
+      </div>
+      <div id="errorMessage" className="modal">
+        <div className="modal-content">
+          <p>Form must be filled before sending</p>
+        </div>
+        <div className="modal-footer">
+          <a
+            href="#!"
+            className="modal-close waves-effect waves-green btn-flat errorCloseBtn"
+          >
+            Close
+          </a>
+        </div>
+      </div>
+      <div id="successMessage" className="modal">
+        <div className="modal-content">
+          <p>Message Sent Successfully</p>
+        </div>
+        <div className="modal-footer">
+          <a
+            href="#!"
+            className="modal-close waves-effect waves-green btn-flat closeBtn"
+          >
+            Close
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Contact;

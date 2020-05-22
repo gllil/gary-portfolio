@@ -1,27 +1,29 @@
 import React from "react";
-import "./components.css";
+import "materialize-css";
+// import { Footer } from "react-materialize"
+// import StickyFooter from "react-sticky-footer"
 
-function Footer() {
+function PageFooter() {
   return (
-    <footer class="page-footer grey darken-2">
-      <div class="footer-copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col s12">
-              <div class="row">
-                <div class="col s12 center">
+    <footer className="page-footer grey darken-2 container-fluid">
+      <div className="footer-copyright">
+        <div className="container">
+          <div className="row">
+            <div className="col s12">
+              <div className="row">
+                <div className="col s12 center">
                   <a href="https://github.com/gllil" target="_blank">
-                    <i class="fab fa-github fa-2x linksIcon"></i>
+                    <i className="fab fa-github fa-2x linksIcon"></i>
                   </a>
                   <a
                     href="https://www.linkedin.com/in/gary-llil-17012746/"
                     target="_blank"
                   >
-                    <i class="fab fa-linkedin fa-2x linksIcon"></i>
+                    <i className="fab fa-linkedin fa-2x linksIcon"></i>
                   </a>
                 </div>
               </div>
-              <div class="center"> © Copyright 2020 </div>
+              <div className="center"> © Copyright 2020 </div>
             </div>
           </div>
         </div>
@@ -30,4 +32,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default PageFooter;
