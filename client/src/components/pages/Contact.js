@@ -24,7 +24,7 @@ function Contact() {
   function handleEmailButton(event) {
     event.preventDefault();
 
-    axios.post("/api/sendMail", formObject)
+    axios.post("http://localhost:3000/api/sendMail", formObject)
   }
 
   return (
