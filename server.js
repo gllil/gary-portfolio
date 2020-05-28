@@ -5,7 +5,6 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 const path = require("path");
 
-const API = require("./routes/API");
 
 const PORT = process.env.PORT || 3001;
 
@@ -15,7 +14,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
-app.use("/api/sendMail", API);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -25,6 +23,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.post("/api/sendMail", (req, res) => {
+  // return res.json("sent")
   const output = `
     <p>You have a new contact request</p>
     <h3>Contact Details</h3>
@@ -60,7 +59,7 @@ app.post("/api/sendMail", (req, res) => {
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   }
 
-  main().catch((err) => console.log(err));
+  main().then(()=>{res.json("sent")}).catch((err) => console.log(err));
 });
 
 app.listen(PORT, function () {

@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import "materialize-css";
-import { TextInput, Textarea } from "react-materialize";
-import axios from "axios"
+import { TextInput, Textarea, Button } from "react-materialize";
+import axios from "axios";
 
 // const nodemailer = require("nodemailer");
 
 function Contact() {
+  const [formDisplay, setFormDisplay] = useState({
+    attr: "block"
+  })
+  const [modalDisplay, setModalDisplay] = useState({
+    attr: "none"
+  })
+  const [validated, setValidated] = useState(false);
   const [formObject, setFormOject] = useState({
     name: "",
     email: "",
     message: "",
   });
-
-  
 
   function handleInputChange(event) {
     setFormOject({
@@ -21,17 +26,34 @@ function Contact() {
     });
   }
 
-  function handleEmailButton(event) {
-    event.preventDefault();
+  function handleSubmit(event) {
+    const form = event.currentTarget;
 
-    axios.post("http://localhost:3000/api/sendMail", formObject)
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    axios.post("/api/sendMail", formObject);
+
+    setValidated(true);
+    setModalDisplay({attr:"block"});
+    setFormDisplay({attr:"none"});
+    console.log(formDisplay.attr);
+    console.log(modalDisplay.attr)
   }
 
   return (
     <div>
       <div className="container">
         <div className="row contact-form">
-          <form className="col s12 " id="contact-form">
+          <form
+            className="col s12 "
+            id="contact-form"
+            validated={validated}
+            onSubmit={handleSubmit}
+            style={{display:formDisplay.attr}}
+          >
             <div className="row text-black">
               <TextInput
                 id="name"
@@ -47,11 +69,9 @@ function Contact() {
             <div className="row text-black">
               <TextInput
                 email
-                error="Please Input an Email"
                 name="email"
                 id="email"
                 label="Email"
-                success="Great"
                 placeholder="email@example.com"
                 validate
                 s={12}
@@ -76,40 +96,19 @@ function Contact() {
             <button
               className="btn waves-effect waves-light grey darken-1 right emailBtn"
               type="submit"
-              onClick={handleEmailButton}
             >
               Submit
               <i className="material-icons right">send</i>
             </button>
           </form>
+
+            <div style={{display:modalDisplay.attr}} className="center">
+            <h3>Message Sent Successfully</h3>
+            </div>
+
         </div>
       </div>
-      <div id="errorMessage" className="modal">
-        <div className="modal-content">
-          <p>Form must be filled before sending</p>
-        </div>
-        <div className="modal-footer">
-          <a
-            href="#!"
-            className="modal-close waves-effect waves-green btn-flat errorCloseBtn"
-          >
-            Close
-          </a>
-        </div>
-      </div>
-      <div id="successMessage" className="modal">
-        <div className="modal-content">
-          <p>Message Sent Successfully</p>
-        </div>
-        <div className="modal-footer">
-          <a
-            href="#!"
-            className="modal-close waves-effect waves-green btn-flat closeBtn"
-          >
-            Close
-          </a>
-        </div>
-      </div>
+      
     </div>
   );
 }

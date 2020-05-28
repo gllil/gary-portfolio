@@ -33,7 +33,7 @@ function NavBar() {
         <li>
         <Link
           className={
-            location.pathname === "/" ? "nav-link active" : "nav-link"
+            location.pathname === "/" ? "active" : ""
           }
           to="/"
         >
@@ -44,8 +44,8 @@ function NavBar() {
         <Link
           className={
             location.pathname === "/portfolio"
-              ? "nav-link active"
-              : "nav-link"
+              ? "active"
+              : ""
           }
           to="/portfolio"
         >
@@ -56,8 +56,8 @@ function NavBar() {
         <Link
           className={
             location.pathname === "/contact"
-              ? "nav-link active"
-              : "nav-link"
+              ? "active"
+              : ""
           }
           to="/contact"
         >
@@ -71,7 +71,7 @@ function NavBar() {
       <NavItem>
       <Link
                     className={
-                      location.pathname === "/" ? "nav-link active" : "nav-link"
+                      location.pathname === "/" ? "active" : ""
                     }
                     to="/"
                   >
@@ -82,8 +82,8 @@ function NavBar() {
       <Link
                     className={
                       location.pathname === "/portfolio"
-                        ? "nav-link active"
-                        : "nav-link"
+                        ? "active"
+                        : ""
                     }
                     to="/portfolio"
                   >
@@ -94,8 +94,8 @@ function NavBar() {
       <Link
                     className={
                       location.pathname === "/contact"
-                        ? "nav-link active"
-                        : "nav-link"
+                        ? "active"
+                        : ""
                     }
                     to="/contact"
                   >
@@ -117,7 +117,7 @@ function NavBar() {
                 // <li>
                 //   <Link
                 //     className={
-                //       location.pathname === "/" ? "nav-link active" : "nav-link"
+                //       location.pathname === "/" ? "active" : ""
                 //     }
                 //     to="/"
                 //   >
@@ -128,8 +128,8 @@ function NavBar() {
                 //   <Link
                 //     className={
                 //       location.pathname === "/portfolio"
-                //         ? "nav-link active"
-                //         : "nav-link"
+                //         ? "active"
+                //         : ""
                 //     }
                 //     to="/portfolio"
                 //   >
@@ -140,8 +140,8 @@ function NavBar() {
                 //   <Link
                 //     className={
                 //       location.pathname === "/contact"
-                //         ? "nav-link active"
-                //         : "nav-link"
+                //         ? "active"
+                //         : ""
                 //     }
                 //     to="/contact"
                 //   >
@@ -154,17 +154,17 @@ function NavBar() {
 
     //       <ul className="sidenav mobile-side" id="mobile-demo">
     //         <li>
-    //           <a className={location.pathname === "/" ? "nav-link active" : "nav-link"} to="/">
+    //           <a className={location.pathname === "/" ? "active" : ""} to="/">
     //             About Me
     //           </a>
     //         </li>
     //         <li>
-    //           <a className={location.pathname === "/portfolio" ? "nav-link active" : "nav-link"} to="/portfolio">
+    //           <a className={location.pathname === "/portfolio" ? "active" : ""} to="/portfolio">
     //             Portfolio
     //           </a>
     //         </li>
     //         <li>
-    //           <a className={location.pathname === "/contact" ? "nav-link active" : "nav-link"} to="/contact">
+    //           <a className={location.pathname === "/contact" ? "active" : ""} to="/contact">
     //             Contact Me
     //           </a>
     //         </li>
