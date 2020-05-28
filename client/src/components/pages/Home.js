@@ -12,16 +12,38 @@ function Home() {
           />
         </div>
 
-        <div className="col s12 center m7 left  about-me-container">
+        <div className="col s12 center m7 left grey-text text-darken-2 about-me-container">
           <h5 className="about-me-title grey-text text-darken-2">About Me</h5>
           <hr className="grey darken-2" />
           <p className="grey-text text-darken-2 about-me">
-            I am a student at UCF coding boot camp. I have learned HTML, CSS,
-            JavaScript, jQuery, and Node.js. I have been a student for about 3
-            months and have worked on a few projects on my own and in a team,
-            which you can find on my portfolio page. I believe my skills I have
-            learned will shine in the work force. I have plenty to learn, but I
-            am willing and capable.
+            I am finishing coding bootcamp at University of Central Florida June
+            2020. Here are the things I have learned:
+          </p>
+          <ul>
+            <li>
+              <h5>Frontend</h5>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>React.js</li>
+              </ul>
+            </li>
+            <li>
+              <h5>Backend</h5>
+              <ul>
+                <li>Node</li>
+                <li>Express</li>
+                <li>MySQL/Sequelize</li>
+                <li>Mongo/Mongoose</li>
+                <li>MERN Stack</li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            I continue strengthening my skills through personal projects and
+            enjoy the work I do.
           </p>
         </div>
       </div>
