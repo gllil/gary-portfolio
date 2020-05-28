@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const path = require("path");
+require("dotenv").config();
 
 
 const PORT = process.env.PORT || 3001;
@@ -42,7 +43,7 @@ app.post("/api/sendMail", (req, res) => {
       secure: false,
       auth: {
         user: "garyjllil@outlook.com", // generated ethereal user
-        pass: "Buveyboo12!", // generated ethereal password
+        pass: process.env.secret, // generated ethereal password
       },
     });
 
