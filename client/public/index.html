@@ -8,17 +8,55 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="icon" href="images/f11837c0-a58e-41ee-a350-0d5cba8894b0_200x200.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
-    <script src="https://kit.fontawesome.com/14111279f9.js" crossorigin="anonymous"></script>
+    <link
+      rel="icon"
+      href="images/f11837c0-a58e-41ee-a350-0d5cba8894b0_200x200.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Spartan&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/14111279f9.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Gary Llil</title>
   </head>
   <body>
     <div id="root"></div>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDSmiw3eT48kx0qPJcY4pkDpLuzLntS-v4",
+        authDomain: "portfolio-4113a.firebaseapp.com",
+        databaseURL: "https://portfolio-4113a.firebaseio.com",
+        projectId: "portfolio-4113a",
+        storageBucket: "portfolio-4113a.appspot.com",
+        messagingSenderId: "479108787224",
+        appId: "1:479108787224:web:eab1a7e6f867a28338e76d",
+        measurementId: "G-9BRG4K4EDM",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

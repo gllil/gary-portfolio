@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import "materialize-css";
-import { TextInput, Textarea, Button } from "react-materialize";
+import { TextInput, Textarea } from "react-materialize";
 import axios from "axios";
 
 // const nodemailer = require("nodemailer");
 
 function Contact() {
   const [formDisplay, setFormDisplay] = useState({
-    attr: "block"
-  })
+    attr: "block",
+  });
   const [modalDisplay, setModalDisplay] = useState({
-    attr: "none"
-  })
+    attr: "none",
+  });
   const [validated, setValidated] = useState(false);
   const [formObject, setFormOject] = useState({
     name: "",
@@ -37,22 +37,23 @@ function Contact() {
     axios.post("/api/sendMail", formObject);
 
     setValidated(true);
-    setModalDisplay({attr:"block"});
-    setFormDisplay({attr:"none"});
+    setModalDisplay({ attr: "block" });
+    setFormDisplay({ attr: "none" });
     console.log(formDisplay.attr);
-    console.log(modalDisplay.attr)
+    console.log(modalDisplay.attr);
   }
 
   return (
     <div>
       <div className="container">
         <div className="row contact-form">
+          <h4 className="proj-description-title center">Contact Me</h4>
           <form
             className="col s12 "
             id="contact-form"
             validated={validated}
             onSubmit={handleSubmit}
-            style={{display:formDisplay.attr}}
+            style={{ display: formDisplay.attr }}
           >
             <div className="row text-black">
               <TextInput
@@ -102,13 +103,11 @@ function Contact() {
             </button>
           </form>
 
-            <div style={{display:modalDisplay.attr}} className="center">
+          <div style={{ display: modalDisplay.attr }} className="center">
             <h3>Message Sent Successfully</h3>
-            </div>
-
+          </div>
         </div>
       </div>
-      
     </div>
   );
 }

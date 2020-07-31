@@ -6,6 +6,64 @@ function Portfolio() {
       <div className="row center project-section grey-text text-darken-2">
         <div className="col s12 m6">
           <div className="row">
+            <h4 className="proj-description-title">
+              InterCraft Auto Upholstery
+            </h4>
+            <a href="https://intercraftupholstery.com/" target="_blank">
+              <img
+                src="images/intercraftHome.PNG"
+                alt="InterCraft Upholstery Website"
+                width="200"
+                className="project-image"
+              />
+            </a>
+            <p>
+              This is a Web App for a Auto Upholstery company. It contains a
+              landing page, a Services page, and a Contact page with a contact
+              form.
+            </p>
+          </div>
+          <div className="row">
+            <h5 className="proj-description-title">Technologies Used</h5>
+            <ul>
+              <li>HTML</li>
+              <li>Bootstrap</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Express</li>
+              <li>Node Mailer</li>
+              <li>Axios</li>
+              <li>Firebase</li>
+            </ul>
+          </div>
+        </div>
+        <div className="col s12 m6">
+          <h5 className="proj-description-title">My Role</h5>
+          <p>
+            I created the design, layout, contact form, and backend for contact
+            form submission. I also set up the hosting through Firebase.
+          </p>
+          <h5 className="proj-description-title">Project Difficulties</h5>
+          <p>
+            There was a bug when deploying to production. The build was taking
+            my css and changing the opacity to 1%.
+          </p>
+          <h5 className="proj-description-title">My Solution</h5>
+          <p>
+            After running the build, I would go into build folder and manually
+            adjust the opacity to the correct percentage.
+          </p>
+          <div>
+            <a href="https://github.com/gllil/intercraft" target="_blank">
+              <i className="fab fa-github fa-2x z-depth-3 git"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="row center project-section grey-text text-darken-2">
+        <div className="col s12 m6">
+          <div className="row">
             <h4 className="proj-description-title">Pawty Time!</h4>
             <a href="https://pawtytime.herokuapp.com/" target="_blank">
               <img

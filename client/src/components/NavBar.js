@@ -1,11 +1,9 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "materialize-css";
 import { NavItem, Navbar, Icon } from "react-materialize";
 
 function NavBar() {
-  const location = useLocation();
-
   return (
     <Navbar
       alignLinks="left"
@@ -29,128 +27,77 @@ function NavBar() {
       }}
       className="grey darken-2"
       sidenav={
-          <ul className="mobile-side">
-        <li>
-        <Link
-          className={
-            location.pathname === "/" ? "active" : ""
-          }
-          to="/"
-        >
-          About Me
-        </Link>
-      </li>
-      <li>
-        <Link
-          className={
-            location.pathname === "/portfolio"
-              ? "active"
-              : ""
-          }
-          to="/portfolio"
-        >
-          Portfolio
-        </Link>
-      </li>
-      <li>
-        <Link
-          className={
-            location.pathname === "/contact"
-              ? "active"
-              : ""
-          }
-          to="/contact"
-        >
-          Contact Me
-        </Link>
-      </li>
-      </ul>
+        <ul className="mobile-side">
+          <li>
+            <Link to="/">About Me</Link>
+          </li>
+          <li>
+            <Link to="/portfolio">Portfolio</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Me</Link>
+          </li>
+        </ul>
       }
     >
-        
       <NavItem>
-      <Link
-                    className={
-                      location.pathname === "/" ? "active" : ""
-                    }
-                    to="/"
-                  >
-                    About Me
-                  </Link>
+        <Link to="/">About Me</Link>
       </NavItem>
       <NavItem>
-      <Link
-                    className={
-                      location.pathname === "/portfolio"
-                        ? "active"
-                        : ""
-                    }
-                    to="/portfolio"
-                  >
-                    Portfolio
-                  </Link>
+        <Link to="/portfolio">Portfolio</Link>
       </NavItem>
       <NavItem>
-      <Link
-                    className={
-                      location.pathname === "/contact"
-                        ? "active"
-                        : ""
-                    }
-                    to="/contact"
-                  >
-                    Contact Me
-                  </Link>
+        <Link to="/contact">Contact Me</Link>
       </NavItem>
     </Navbar>
 
     //     <div>
-        //   <nav className="grey darken-2">
-        //     <div className="nav-wrapper container">
-        //       <Link to="/" className="right name-title">
-        //         Gary Llil
-        //       </Link>
-        //       <a href="#" data-target="mobile-demo" className="sidenav-trigger">
-        //         <i className="material-icons">menu</i>
-        //       </a>
-        //       <ul id="nav-mobile" className="left hide-on-med-and-down">
-                // <li>
-                //   <Link
-                //     className={
-                //       location.pathname === "/" ? "active" : ""
-                //     }
-                //     to="/"
-                //   >
-                //     About Me
-                //   </Link>
-                // </li>
-                // <li>
-                //   <Link
-                //     className={
-                //       location.pathname === "/portfolio"
-                //         ? "active"
-                //         : ""
-                //     }
-                //     to="/portfolio"
-                //   >
-                //     Portfolio
-                //   </Link>
-                // </li>
-                // <li>
-                //   <Link
-                //     className={
-                //       location.pathname === "/contact"
-                //         ? "active"
-                //         : ""
-                //     }
-                //     to="/contact"
-                //   >
-                //     Contact Me
-                //   </Link>
-                // </li>
-        //       </ul>
-        //     </div>
-        //   </nav>
+    //   <nav className="grey darken-2">
+    //     <div className="nav-wrapper container">
+    //       <Link to="/" className="right name-title">
+    //         Gary Llil
+    //       </Link>
+    //       <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+    //         <i className="material-icons">menu</i>
+    //       </a>
+    //       <ul id="nav-mobile" className="left hide-on-med-and-down">
+    // <li>
+    //   <Link
+    //     className={
+    //       location.pathname === "/" ? "active" : ""
+    //     }
+    //     to="/"
+    //   >
+    //     About Me
+    //   </Link>
+    // </li>
+    // <li>
+    //   <Link
+    //     className={
+    //       location.pathname === "/portfolio"
+    //         ? "active"
+    //         : ""
+    //     }
+    //     to="/portfolio"
+    //   >
+    //     Portfolio
+    //   </Link>
+    // </li>
+    // <li>
+    //   <Link
+    //     className={
+    //       location.pathname === "/contact"
+    //         ? "active"
+    //         : ""
+    //     }
+    //     to="/contact"
+    //   >
+    //     Contact Me
+    //   </Link>
+    // </li>
+    //       </ul>
+    //     </div>
+    //   </nav>
 
     //       <ul className="sidenav mobile-side" id="mobile-demo">
     //         <li>
