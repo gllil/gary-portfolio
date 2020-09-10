@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { functions } from "../../firebase/config";
 import "materialize-css";
 import { TextInput, Textarea } from "react-materialize";
-import axios from "axios";
+// import axios from "axios";
 
 // const nodemailer = require("nodemailer");
 
@@ -19,14 +20,19 @@ function Contact() {
     message: "",
   });
 
+  // const emailRef = firestore().collection("messageDetails");
+
   function handleInputChange(event) {
     setFormOject({
       ...formObject,
       [event.target.name]: event.target.value,
     });
+
+    console.log(formObject);
   }
 
   function handleSubmit(event) {
+    event.preventDefault();
     const form = event.currentTarget;
 
     if (form.checkValidity() === false) {
@@ -34,13 +40,18 @@ function Contact() {
       event.stopPropagation();
     }
 
-    axios.post("/api/sendMail", formObject);
+    const contactEmail = functions.httpsCallable("contactEmail");
 
-    setValidated(true);
-    setModalDisplay({ attr: "block" });
-    setFormDisplay({ attr: "none" });
-    console.log(formDisplay.attr);
-    console.log(modalDisplay.attr);
+    contactEmail(formObject).then((res) => {
+      console.log(res);
+      setValidated(true);
+      setModalDisplay({ attr: "block" });
+      setFormDisplay({ attr: "none" });
+      window.location.reload(false);
+    });
+
+    // emailRef.add(formObject).then(() => {});
+    // axios.post("/api/sendMail", formObject);
   }
 
   return (
