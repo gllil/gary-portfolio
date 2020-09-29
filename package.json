@@ -1,25 +1,20 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "http://localhost:3001",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.19.2",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
     "firebase": "^7.19.1",
-    "http-proxy-middleware": "^1.0.4",
     "materialize-css": "^1.0.0-rc.2",
     "nodemailer": "^6.4.11",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-materialize": "^3.9.3",
+    "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.3",
-    "react-sticky-footer": "0.1.0-rc3"
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",

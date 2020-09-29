@@ -12,12 +12,17 @@ function PageFooter() {
             <div className="col s12">
               <div className="row">
                 <div className="col s12 center">
-                  <a href="https://github.com/gllil" target="_blank">
+                  <a
+                    href="https://github.com/gllil"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-github fa-2x linksIcon"></i>
                   </a>
                   <a
                     href="https://www.linkedin.com/in/gary-llil-17012746/"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <i className="fab fa-linkedin fa-2x linksIcon"></i>
                   </a>

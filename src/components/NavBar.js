@@ -8,7 +8,7 @@ function NavBar() {
     <Navbar
       alignLinks="left"
       brand={
-        <Link className="right name-title" href="#">
+        <Link className="right name-title" to="/">
           Gary Llil
         </Link>
       }
@@ -40,15 +40,9 @@ function NavBar() {
         </ul>
       }
     >
-      <NavItem>
-        <Link to="/">About Me</Link>
-      </NavItem>
-      <NavItem>
-        <Link to="/portfolio">Portfolio</Link>
-      </NavItem>
-      <NavItem>
-        <Link to="/contact">Contact Me</Link>
-      </NavItem>
+      <NavItem href="/">About Me</NavItem>
+      <NavItem href="/portfolio">Portfolio</NavItem>
+      <NavItem href="/contact">Contact Me</NavItem>
     </Navbar>
 
     //     <div>
