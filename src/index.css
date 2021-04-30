@@ -1,12 +1,139 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+main {
+  /* max-height: 100%; */
+  flex: 1 0 auto;
+  /* min-height: calc(100vh - 64px - 163.25px); */
+}
+
+.name-title {
+  color: #5dbcd2;
+  font-size: xx-large;
+}
+
+.nav-link {
+  color: #5dbcd2;
+  font-size: large;
+}
+
+nav {
+  min-height: auto;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  box-shadow: 3px 3px 5px #888888;
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+p {
+  font-family: "Spartan";
+}
+
+.about-me {
+  margin: 20px;
+  /* padding: 20px; */
+}
+
+.about-me-container {
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #888888;
+  background-color: #adf6b1;
+  margin-top: 20px;
+}
+
+hr {
+  border: 1px solid;
+  opacity: 50%;
+}
+
+.about-me-title {
+  color: #5dbcd2;
+}
+
+.portfolio-display {
+  padding: 20px;
+  margin: 20px;
+  height: max-content;
+}
+
+.contact-form {
+  margin: 20px;
+  background-color: #adf6b1;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #888888;
+}
+
+.slides {
+  background-color: none;
+}
+
+.mobile-side {
+  color: #717c89;
+}
+.mobile-side-wrapper {
+  background-color: #90baad;
+  background-size: cover;
+  height: 100vh;
+}
+
+.project-section {
+  margin: 20px;
+  background-color: #adf6b1;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #888888;
+}
+
+.project-image {
+  box-shadow: 3px 3px 5px #888888;
+}
+
+.proj-description-title {
+  color: #717c89;
+}
+
+h4 {
+  font-weight: bolder;
+}
+
+.git {
+  color: #717c89;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+.copyright {
+  margin: auto;
+}
+
+.linksIcon {
+  color: #5dbcd2;
+  margin: 15px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.active {
+  color: gold;
 }

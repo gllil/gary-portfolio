@@ -12,6 +12,7 @@ function NavBar() {
           Gary Llil
         </Link>
       }
+      centerChildren
       id="mobile-nav"
       menuIcon={<Icon>menu</Icon>}
       options={{
@@ -27,17 +28,19 @@ function NavBar() {
       }}
       className="grey darken-2"
       sidenav={
-        <ul className="mobile-side">
-          <li>
-            <Link to="/">About Me</Link>
-          </li>
-          <li>
-            <Link to="/portfolio">Portfolio</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact Me</Link>
-          </li>
-        </ul>
+        <div className="mobile-side-wrapper">
+          <ul className="mobile-side">
+            <li>
+              <Link to="/">About Me</Link>
+            </li>
+            <li>
+              <Link to="/portfolio">Portfolio</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Me</Link>
+            </li>
+          </ul>
+        </div>
       }
     >
       <NavItem href="/">About Me</NavItem>
